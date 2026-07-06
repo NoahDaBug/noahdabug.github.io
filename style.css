@@ -1014,6 +1014,15 @@ main {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
 }
 
+/* When gallery images are wrapped by .image-frame, remove their bottom margin
+   so no blank strip remains inside framed thumbnails. */
+.category-gallery .image-frame .gallery-photo {
+  display: block;
+  margin-bottom: 0;
+  width: 100%;
+  height: auto;
+}
+
 .category-card {
   padding: 28px 24px;
   background: linear-gradient(135deg, #f5f9f8, #f8f6fa);
