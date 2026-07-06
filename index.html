@@ -149,7 +149,7 @@
 
     <section class="category-section" id="categories-section">
       <div class="category-section-header">
-        <h1>My Photography Categories</h1>
+        <h1>My Gallery</h1>
         <button class="category-toggle" id="category-toggle" type="button" aria-expanded="true" aria-controls="category-content">
           <span class="category-toggle-text">Minimize</span>
           <span class="category-toggle-icon" aria-hidden="true">−</span>
@@ -363,7 +363,8 @@
           img.parentNode.insertBefore(wrapper, img);
           wrapper.appendChild(img);
 
-          if (!img.closest('.image-card')) {
+          // Do not add visible captions for gallery images (they block the photos)
+          if (!img.closest('.image-card') && !img.classList.contains('gallery-photo')) {
             const caption = document.createElement('div');
             caption.className = 'image-caption';
             caption.textContent = img.getAttribute('alt') || 'Photography';
